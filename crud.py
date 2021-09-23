@@ -6,7 +6,8 @@ import os
 
 app = Flask(__name__)
 
-# CORS implemented so that we don't get errors when trying to access the server from a different server location
+
+#IMPLEMENTAR CORS PARA NO TENER ERRORES AL TRATAR ACCEDER AL SERVIDOR DESDE OTRO SERVER EN DIFERENTE LOCACIÓN
 CORS(app)
 
 DB_HOST = "localhost"
@@ -23,12 +24,13 @@ try:
     cur = con.cursor()
     
     print(con.status)
-    # GET: Fetch all movies from the database
+    
 
     @app.route("/")
     def hello():
       return "<h1 style='color:blue'>ESTAMOS EN EL LABORATORIO DE ARCHIVOS !</h1>"
 
+#obtengo todos los registros de mi tabla movies que cree en mi BD
     @app.route('/toda', methods=['GET'])
     def fetch_all_movies():
         cur.execute('SELECT * FROM movies')
