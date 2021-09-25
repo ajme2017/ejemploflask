@@ -11,9 +11,9 @@ app = Flask(__name__)
 CORS(app)
 
 DB_HOST = "localhost"
-DB_NAME = "prueba"
-DB_USER = "postgres"
-DB_PASS = "123456789"
+DB_NAME = "databasename"
+DB_USER = "databaseuser"
+DB_PASS = "databasepassword"
 try:
     con = psycopg2.connect(
         dbname=DB_NAME,
